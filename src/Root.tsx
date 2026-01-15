@@ -11,7 +11,6 @@ const Card = ({ image, title, children }: { image?: string; title?: string; chil
 export const Root = () => {
   return (
     <div className="p-10 flex space-x-6">
-      <Card image="https://www.oslcalciogarbagnate.it/storage/img_notizie/thumb/172560030720240906.jpg" title="Mave" />
       <Card image="/frontend-rocks/geodude-pattern.png" title="Geodude" />
       <Card image="/frontend-rocks/geodude-pattern.png" title="Geodude" />
       <Card image="/frontend-rocks/geodude-pattern.png" title="Geodude" />
