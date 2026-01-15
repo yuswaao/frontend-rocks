@@ -6,6 +6,5 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? 'https://yuswaao.github.io/frontend-rocks/' : '/frontend-rocks',
   plugins: [react(), tailwindcss()],
-  
 })
 
