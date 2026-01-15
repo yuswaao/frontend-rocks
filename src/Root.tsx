@@ -1,48 +1,22 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router";
+const Card = ({ image, title, children }: { image?: string; title?: string; children?: React.ReactNode }) => {
+  return (
+    <div className="bg-white w-60 flex flex-col rounded-xl shadow-md overflow-hidden">
+      {image && <img src={image} alt={title || ""} className="w-full h-48 object-cover" />}
+      {title && <p className="p-4 text-center font-semibold">{title}</p>}
+      {children}
+    </div>
+  );
+};
 
 export const Root = () => {
-  const [count, setCount] = useState(0);
-  const [title, setTitle] = useState("Titolo iniziale");
-
-  useEffect(() => {
-    if (count === 4) {
-      setTitle("Il titolo ha superato il 4");
-    }
-  }, [count]);
-
   return (
-    <div className="h-dvh flex flex-col items-center justify-center">
-      <div className="bg-white p-8 rounded-md shadow-lg">
-        <h1 className="text-center font-bold text-3xl text-blue-400 mb-4">
-          {title}
-        </h1>
-
-        <h2 className="text-center font-bold text-xl mb-6">Vite + React</h2>
-
-        <div className="flex flex-col items-center space-y-4">
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md cursor-pointer hover:bg-blue-600 transition-colors"
-            onClick={() => setCount((count) => count + 1)}
-          >
-            Hai premuto il pulsante {count} {count === 1 ? "volta" : "volte"}
-          </button>
-
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md cursor-pointer hover:bg-blue-600 transition-colors"
-            onClick={() => setTitle("Charizard")}
-          >
-            Cambia titolo
-          </button>
-
-          <Link
-            to="/frontend-rocks/dettaglio/1"
-            className="text-blue-500 underline"
-          >
-            Link alla pagina di dettaglio
-          </Link>
-        </div>
-      </div>
+    <div className="p-10 flex space-x-6">
+      <Card image="/frontend-rocks/geodude-pattern.png" title="Geodude" />
+      <Card image="/frontend-rocks/geodude-pattern.png" title="Geodude" />
+      <Card image="/frontend-rocks/geodude-pattern.png" title="Geodude" />
+      <Card image="/frontend-rocks/geodude-pattern.png" title="Geodude" />
+      <Card image="/frontend-rocks/geodude-pattern.png" title="Geodude" />
+      <Card image="/frontend-rocks/geodude-pattern.png" title="Geodude" />
     </div>
   );
 };
