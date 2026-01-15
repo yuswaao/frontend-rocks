@@ -8,7 +8,7 @@ type PokemonCardData = {
 };
 
 async function fetchCartData(): Promise<PokemonCardData[]> {
-  const response = await PokeAPI.listPokemons(0, 21);
+  const response = await PokeAPI.listPokemons(0, 100);
 
   const detailedPokemons = await Promise.all(
     response.results.map(async (item, idx) => {
